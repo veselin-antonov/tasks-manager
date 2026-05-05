@@ -299,7 +299,7 @@ function App() {
     <div className='min-h-screen bg-zinc-50/60 py-8 dark:bg-zinc-950'>
       <main className='mx-auto w-full max-w-4xl space-y-6 px-4'>
         <header className='space-y-1'>
-          <h1 className='text-3xl font-semibold tracking-tight'>
+          <h1 className='text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100'>
             Recurring Task Tracker
           </h1>
           <p className='text-sm text-zinc-600 dark:text-zinc-400'>
