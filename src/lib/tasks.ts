@@ -89,17 +89,25 @@ export function deriveNameFromTopcodingUrl(link: string): string | null {
     .reverse()
     .find(
       (segment) =>
-        segment.includes('-') &&
         !/^\d+$/.test(segment) &&
-        !difficultyTokens.has(segment.toLowerCase()),
+        !difficultyTokens.has(segment.toLowerCase()) &&
+        /[a-zA-Z]/.test(segment),
     );
 
   if (!slug) {
     return null;
   }
 
-  const words = slug
-    .split('-')
+  const decodedSlug = (() => {
+    try {
+      return decodeURIComponent(slug);
+    } catch {
+      return slug;
+    }
+  })();
+
+  const words = decodedSlug
+    .split(/[-_]+/)
     .map((word) => word.trim())
     .filter(Boolean);
 
