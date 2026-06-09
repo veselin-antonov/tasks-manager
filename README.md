@@ -69,7 +69,7 @@ This repo includes:
 - `Dockerfile.api`
 - `Dockerfile.web`
 - `nginx.conf`
-- `docker-compose.yml`
+- `compose.yaml`
 
 Start it:
 
